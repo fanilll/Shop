@@ -5,9 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shope"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="HardWare" Height="550" Width="800">
     <Grid>
-        
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="183*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="0" x:Name="LogoImage" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
+        <Frame x:Name="MainFrame" Grid.Row="1"></Frame>
     </Grid>
 </Window>

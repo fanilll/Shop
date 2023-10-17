@@ -1,4 +1,4 @@
-﻿using Shope.Pages;
+﻿using Shope.Components;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,18 +14,22 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Shope
+
+namespace Shope.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для listPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class listPage : Page
     {
-        public MainWindow()
+        public listPage()
         {
             InitializeComponent();
-            LogoImage.Source = new BitmapImage(new Uri(@"\Resources\pngwing.png", UriKind.Relative));
-            MainFrame.Navigate(new listPage());
+            IEnumerable<Product> productSortList = App.db.Product;
+            foreach (var product in productSortList)
+            {
+                MainWp.Children.Add(new userControl(product));
+            }
         }
     }
 }
