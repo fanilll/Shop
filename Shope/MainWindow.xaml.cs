@@ -1,4 +1,5 @@
-﻿using Shope.Pages;
+﻿using Shope.Components.PartialClass;
+using Shope.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,8 +25,29 @@ namespace Shope
         public MainWindow()
         {
             InitializeComponent();
-            LogoImage.Source = new BitmapImage(new Uri(@"\Resources\pngwing.png", UriKind.Relative));
-            MainFrame.Navigate(new listPage());
+            Navigation.mainWindow = this;
+            //var path = @"\\NAS36D451\user-domain$\stud\212102\Desktop\";
+            //foreach (var item in App.db.Product.ToArray())
+            //{
+            //    var fullPath = path + item.MainImage_Path.Trim();
+            //    item.MainImage = File.ReadAllBytes(fullPath);
+            //}
+            //App.db.SaveChanges();
+            Navigation.NextPage(new PageComponent("Авторизация", new AuthorizationPage()));
+
+        }
+
+
+        private void ExitBut_Click(object sender, RoutedEventArgs e)
+        {
+            App.isAdmin = false;
+            Navigation.ClearHistory();
+            Navigation.NextPage(new PageComponent("Авторизация", new AuthorizationPage()));
+        }
+
+        private void BackBut_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.BackPage();
         }
     }
 }

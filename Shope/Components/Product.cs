@@ -11,7 +11,8 @@ namespace Shope.Components
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Windows;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +20,32 @@ namespace Shope.Components
         {
             this.Feedback = new HashSet<Feedback>();
         }
-    
+        public decimal NewCost
+        {
+            get
+            {
+                if (Discount == 0 || Discount is null) return Cost;
+                else return Cost - Cost * (decimal)Discount / 100;
+            }
+        }
+
+        public Visibility CostVisibility
+        {
+            get
+            {
+                if (Discount == 0)
+                    return Visibility.Collapsed;
+                else return Visibility.Visible;
+            }
+        }
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
         public decimal Cost { get; set; }
         public Nullable<double> Discount { get; set; }
         public byte[] MainImage { get; set; }
-        public string MainImagepPath { get; set; }
+        public string MainImagePath { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Feedback> Feedback { get; set; }

@@ -14,6 +14,7 @@ namespace Shope
     /// </summary>
     public partial class App : Application
     {
-        //public static HardwareShoEntities db = new HardwareShoEntities();
+        public static HardwareShopEntities db = new HardwareShopEntities();
+        public static bool isAdmin=false;
     }
 }

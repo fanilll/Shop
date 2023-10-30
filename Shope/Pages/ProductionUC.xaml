@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Shope.Pages.ProductionUC"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Shope.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800">
+
+    <Border x:Name="MainBorder" Height="400" Width="290" BorderBrush="#FFFFB4E6" BorderThickness="2" Margin="2">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="67*"/>
+                <RowDefinition Height="18*"/>
+                <RowDefinition Height="15*"/>
+                <RowDefinition Height="17*"/>
+                <RowDefinition Height="33*"/>
+            </Grid.RowDefinitions>
+
+
+            <Image x:Name="Img" Source="/Recources/image2.jpg" />
+            <TextBlock Margin="0 75 5 0" FontSize="18" HorizontalAlignment="Right" x:Name="DiscoTB" Height="35" Width="65" Background="#FFFF4747" Foreground="White"></TextBlock>
+            <TextBlock x:Name="TitleTb" Grid.Row="1"></TextBlock>
+            <StackPanel Grid.Row="2" Orientation="Horizontal">
+                <TextBlock x:Name="StarAmountTb"></TextBlock>
+                <TextBlock Margin="100 0" x:Name="CommentsTb"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="3" Orientation="Horizontal">
+                <TextBlock FontSize="20" x:Name="CostNewTb" Margin="5 0"></TextBlock>
+                <TextBlock x:Name="CostOldTb" TextDecorations="Strikethrough"></TextBlock>
+            </StackPanel>
+            <StackPanel HorizontalAlignment="Center"  Grid.Row="4" Orientation="Horizontal">
+                <Button x:Name="BuyButt" Background="#FFFF4747" Foreground="White" BorderBrush="#FFFF4747">Купить</Button>
+                <Button x:Name="RedactButt" Background="#FFFF4747" Foreground="White" BorderBrush="#FFFF4747" Click="RedactButt_Click">Редакт.</Button>
+                <Button Background="White" x:Name="LikeButt" BorderBrush="White">❤</Button>
+                <Button Background="White" x:Name="DeleteButt" BorderBrush="White" Click="DeleteButt_Click">Удалить</Button>
+                <Button Background="White" x:Name="StatisticButt" BorderBrush="White">.|||.</Button>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+</UserControl>

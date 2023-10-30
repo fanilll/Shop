@@ -5,13 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Shope"
         mc:Ignorable="d"
-        Title="HardWare" Height="550" Width="800">
+        Title="HardWare" Height="550" Width="850">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="39*"/>
+            <ColumnDefinition Width="361*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="27*"/>
-            <RowDefinition Height="183*"/>
+            <RowDefinition/>
+            <RowDefinition Height="6*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Row="0" x:Name="LogoImage" HorizontalAlignment="Center" VerticalAlignment="Center"></Image>
-        <Frame x:Name="MainFrame" Grid.Row="1"></Frame>
+
+        <Rectangle Fill="AliceBlue" Grid.ColumnSpan="2"></Rectangle>
+        <Rectangle Fill="AliceBlue" Grid.RowSpan="2"></Rectangle>
+
+        <TextBlock x:Name="TitleTB" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Название</TextBlock>
+
+        <StackPanel Grid.Row="1" VerticalAlignment="Bottom">
+            <Button Width="65" Margin="0 20" Height="40" x:Name="BackButt" Click="BackBut_Click">Назад</Button>
+            <Button Width="65" Margin="0 20" Height="40" x:Name="ExitButt" Click="ExitBut_Click">Выход</Button>
+        </StackPanel>
+
+        <Frame NavigationUIVisibility="Hidden" x:Name="MainFrame" Grid.Column="1" Grid.Row="1"></Frame>
     </Grid>
 </Window>
