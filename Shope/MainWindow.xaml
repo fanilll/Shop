@@ -18,7 +18,7 @@
 
         <Rectangle Fill="AliceBlue" Grid.ColumnSpan="2"></Rectangle>
         <Rectangle Fill="AliceBlue" Grid.RowSpan="2"></Rectangle>
-
+        <Image Source="\Recources\shop.png" />
         <TextBlock x:Name="TitleTB" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">Название</TextBlock>
 
         <StackPanel Grid.Row="1" VerticalAlignment="Bottom">

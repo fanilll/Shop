@@ -11,8 +11,7 @@ namespace Shope.Components
 {
     using System;
     using System.Collections.Generic;
-    using System.Windows;
-
+    
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,25 +19,7 @@ namespace Shope.Components
         {
             this.Feedback = new HashSet<Feedback>();
         }
-        public decimal NewCost
-        {
-            get
-            {
-                if (Discount == 0 || Discount is null) return Cost;
-                else return Cost - Cost * (decimal)Discount / 100;
-            }
-        }
-
-        public Visibility CostVisibility
-        {
-            get
-            {
-                if (Discount == 0)
-                    return Visibility.Collapsed;
-                else return Visibility.Visible;
-            }
-        }
-
+    
         public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }

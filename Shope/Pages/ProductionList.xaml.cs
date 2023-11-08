@@ -31,6 +31,7 @@ namespace Shope.Pages
             var productList = App.db.Product.ToList();
             Refresh();
         }
+        
 
         private void Refresh()
         {
@@ -48,6 +49,7 @@ namespace Shope.Pages
             {
                 ProductionWP.Children.Add(new ProductionUC(service));
             }
+            CountDataTb.Text = productSortList.Count() + " из " + App.db.Product.Count();
         }
 
         private void SortCB_SelectionChanged(object sender, SelectionChangedEventArgs e)

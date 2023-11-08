@@ -32,6 +32,7 @@ namespace Shope.Pages
             CostNewTb.Text = $"{product.NewCost} ₽";
             CostOldTb.Text = product.Cost.ToString();
             CostOldTb.Visibility = product.CostVisibility;
+            Img.Source = GetImageSources(product.MainImage);
 
             var FeedList = App.db.Feedback.ToList();
             var feed = FeedList.Where(x => x.ProductId == product.Id).ToList();
@@ -80,7 +81,7 @@ namespace Shope.Pages
                 image.EndInit();
                 return image;
             }
-            return new BitmapImage(new Uri(@"\Recources\", UriKind.Relative));
+            return new BitmapImage(new Uri(@"\Recources\shop.png", UriKind.Relative));
         }
 
 

@@ -13,10 +13,10 @@ namespace Shope.Components
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HardwareShopEntities : DbContext
+    public partial class HardwareShopEntities1 : DbContext
     {
-        public HardwareShopEntities()
-            : base("name=HardwareShopEntities")
+        public HardwareShopEntities1()
+            : base("name=HardwareShopEntities1")
         {
         }
     

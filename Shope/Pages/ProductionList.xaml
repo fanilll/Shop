@@ -26,7 +26,9 @@
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled">
             <WrapPanel x:Name="ProductionWP"></WrapPanel>
         </ScrollViewer>
-
-        <Button Grid.Row="2" Height="50" x:Name="AddBtn" Click="AddBtn_Click">Добавить</Button>
+        <StackPanel  Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Height="50" x:Name="AddBtn" Click="AddBtn_Click">Добавить</Button>
+            <TextBlock Margin="20 0" x:Name="CountDataTb"></TextBlock>
+        </StackPanel>
     </Grid>
 </Page>

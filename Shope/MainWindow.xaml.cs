@@ -2,6 +2,7 @@
 using Shope.Pages;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,10 @@ namespace Shope
         {
             InitializeComponent();
             Navigation.mainWindow = this;
-            //var path = @"\\NAS36D451\user-domain$\stud\212102\Desktop\";
+            //var path = @"C:\Users\fhusn\Desktop\";
             //foreach (var item in App.db.Product.ToArray())
             //{
-            //    var fullPath = path + item.MainImage_Path.Trim();
+            //    var fullPath = path + item.MainImagePath.Trim();
             //    item.MainImage = File.ReadAllBytes(fullPath);
             //}
             //App.db.SaveChanges();
