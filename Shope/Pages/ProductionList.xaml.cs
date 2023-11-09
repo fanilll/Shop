@@ -61,5 +61,10 @@ namespace Shope.Pages
         {
             Navigation.NextPage(new PageComponent("Добавление услуг", new AddEditPage(new Product())));
         }
+
+        private void Korzina_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent("Корзина", new OrderPage()));
+        }
     }
 }
